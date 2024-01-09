@@ -1,0 +1,56 @@
+#submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(10, 10, 10, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 100%;
+}
+
+#submenu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#submenu a:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#submenu > div {
+    position: relative;
+    z-index: 1000; /* Ensure the submenu appears above other elements */
+    text-align: center; /* Center align the content inside each div */
+}
+
+#submenu table {
+    width: 40%; /* Set the width of the table to 90% of the parent div */
+    margin: 0 auto; /* Center align the table within the parent div */
+    border-spacing: 5%; /* Set the column gap to 5% */
+}
+
+.collapse a{
+    color: white;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+}
+
+.slogan-bar {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    background-color: rgba(169, 169, 169, 0.4); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 15%
+}
