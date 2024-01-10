@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "mysite",
     "pages",
+    "common",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+MEDIA_URL = '/products/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'products')
+
+LOGIN_REDIRECT_URL = '/'

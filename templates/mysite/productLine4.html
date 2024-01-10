@@ -146,16 +146,31 @@
             });
         </script>
 
-        <img class="main-image" src="https://zrr.kr/J6WP" alt="Main Image">
-        <div id="information-bar">
-            <div class="m-0 text-white" style="font-size: 40px;">찾아오는 길</div>
-            <br>
-            <div class="m-0 text-white">주저리 주저리</div>
-            <img class="Map-image" src="https://zrr.kr/2PqR" alt="Map Image" style="width:80%; height:80%; top:50%;">
+        <div class="container px-4 px-lg-5">
+        {% if productList %}
+            {% for product in productList %}
+                {% if product.productLine == '4' %}
+                    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                        <div class="col-lg-7">
+                            {% with default_image_url="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" %}
+                                <img class="img-fluid rounded mb-4 mb-lg-0"
+                                     src="{% if product.image %}{{ product.image.url }}{% else %}{{ default_image_url }}{% endif %}"
+                                     alt="Product Image" />
+                            {% endwith %}
+                        </div>
+                        <div class="col-lg-5">
+                            <h1 class="font-weight-light">{{ product.name }}</h1>
+                            <p>{{ product.description }}</p>
+                            <a class="btn btn-primary" href="#!">상품 상세보기</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>content가 없습니다.</p>
+        {% endif %}
+    </div>
 
-        </div>
-        <div>옵션</div>
-        <p>옵션</p>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>

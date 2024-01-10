@@ -20,12 +20,13 @@
 }
 
 #submenu a:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 #submenu > div {
     position: relative;
-    z-index: 1000; /* Ensure the submenu appears above other elements */
+    z-index: -1; /* Ensure the submenu appears above other elements */
     text-align: center; /* Center align the content inside each div */
 }
 
@@ -36,6 +37,10 @@
 }
 
 .collapse a{
+    color: white;
+}
+
+.collapse a:hover{
     color: white;
 }
 
@@ -53,4 +58,91 @@
     border-radius: 5px;
     text-align: center;
     width: 15%
+}
+
+#introduce-bar{
+    position: absolute;
+    top: 70%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%
+}
+
+#history-bar{
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%
+}
+
+#information-bar{
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%
+}
+
+#login-section {
+    display: flex;
+    align-items: center;
+}
+
+#login-section a {
+    margin-left: auto; /* Push the login link to the right */
+}
+
+#signup-section {
+    display: flex;
+    align-items: center;
+}
+
+#signup-section a {
+    margin-left: auto; /* Push the login link to the right */
+}
+
+#login-field {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    background-color: rgba(169, 169, 169, 0.4); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    height: 40%;
+}
+
+#signup-field {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    background-color: rgba(169, 169, 169, 0.4); /* Adjust the color and opacity as needed */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+}
+
+#login-box {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+#login-button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
 }
