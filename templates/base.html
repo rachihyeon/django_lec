@@ -18,6 +18,20 @@
     {% include "navbar.html" %}
     {% block content %}
     {% endblock %}
+    <div id="quickNavigator">
+        {% if user.is_authenticated %}
+        <div>마이페이지</div>
+        <div>안녕하세요 {{ user.username }}님!</div>
+        <div class="quickNavigator-submenu">
+            <div><a href="/profile">프로필</a></div>
+            <div><a href="/settings">설정</a></div>
+            <div><a href="/messages">메시지</a></div>
+        </div>
+        {% else %}
+        <div>마이페이지</div>
+        <div>로그인이 필요합니다.</div>
+        {% endif %}
+    </div>
     {% include "footer.html" %}
     </body>
 </html>

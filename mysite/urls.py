@@ -19,12 +19,8 @@ from . import views
 
 urlpatterns = [
     path("", views.company_productList),
-    # path("productLine<int:productLineNumber>/", views.productLine),
-    path("productLine1/", views.company_productLine1),
-    path("productLine2/", views.company_productLine2),
-    path("productLine3/", views.company_productLine3),
-    path("productLine4/", views.company_productLine4),
-    path("<str:content_name>/", views.detail),
+    path("productLine<str:productLineNumber>/", views.company_productLine),
+    path("<str:product_name>/", views.detail),
 ]
 
 # 제품군 html 1개로 정리 가능할 것 같은데...

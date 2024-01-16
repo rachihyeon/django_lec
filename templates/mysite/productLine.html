@@ -3,7 +3,6 @@
 <div class="container px-4 px-lg-5">
 {% if productList %}
     {% for product in productList %}
-        {% if product.productLine == '1' %}
         <div class="row gx-4 gx-lg-5 align-items-center my-5">
             <div class="col-lg-7">
                 {% with default_image_url="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" %}
@@ -23,7 +22,6 @@
             window.location.href = "../{{ product.name }}";
         };
         </script>
-        {% endif %}
     {% endfor %}
 {% else %}
     <p>content가 없습니다.</p>
