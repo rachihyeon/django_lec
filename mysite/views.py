@@ -30,3 +30,8 @@ def company_productLine4(request):
     productList = Product.objects.order_by("-pub_date")
     dataSet = {"productList": productList}
     return render(request, "mysite/productLine4.html", dataSet)
+
+def detail(request, content_name):
+    productList = Product.objects.get(name=content_name)
+    dataSet = {'productList': productList}
+    return render(request, 'mysite/detail.html', dataSet)
