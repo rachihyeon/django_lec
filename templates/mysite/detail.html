@@ -1,7 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>{{ productList.name }}</h2>
-<div>
-{{ productList.description }}
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7">
+        {% with default_image_url="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" %}
+            <img class="img-fluid rounded mb-4 mb-lg-0" id="Product_Image_{{ product.name }}"
+                 src="{% if productList.image %}{{ productList.image.url }}{% else %}{{ default_image_url }}{% endif %}"
+                 alt="Product Image" />
+        {% endwith %}
+    </div>
+    <div>
+    {{ productList.description }}
+    </div>
 </div>
+<section class="mb-5">
+    <div class="card bg-light">
+        <div class="card-body">
+            <form method="post" class="mb-4" action="{% url 'comment_create' productList.name %}">
+                {% csrf_token %}
+                <textarea id="content" name="content" class="form-control" rows="3"
+                placeholder="내용을 입력해주세요."></textarea>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+        {% for comment in productList.comment_set.all %}
+        <div class="d-flex">
+            <div class="ms-3">
+                <div class="fw-bold">{{ comment.author.username }} &nbsp&nbsp
+                {{ comment.create_date }}</div>
+                {{ comment.content }}
+                </div>
+            </div>
+        <br/>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% endblock %}
