@@ -22,6 +22,8 @@ urlpatterns = [
     path("productLine<str:productLineNumber>/", views.company_productLine),
     path("<str:product_name>/", views.detail),
     path('comment/create/<str:product_name>/', views.comment_create, name='comment_create'),
+    path('comment/update/<int:comment_id>/', views.comment_update, name='comment_update'),
+    path('comment/delete/<int:comment_id>/', views.comment_delete, name='comment_delete'),
+
 ]
 
-# 제품군 html 1개로 정리 가능할 것 같은데...
